@@ -2,9 +2,26 @@ package pl.pjatk.car;
 
 import org.springframework.boot.SpringApplication;
 
-public class Car {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Car {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String mark;
+    private String model;
+    private String color;
+    private int year;
+    private int wheels;
+
+    public Car() {
+
+    }
+
 
     @Override
     public String toString() {
@@ -17,10 +34,6 @@ public class Car {
                 '}';
     }
 
-    private String model;
-    private String color;
-    private int year;
-    private int wheels;
 
 
     public Car(String mark, String model, String color, int year, int wheels) {
