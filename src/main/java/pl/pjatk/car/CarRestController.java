@@ -26,4 +26,9 @@ public class CarRestController {
     public ResponseEntity<Car> buildCar() {
         return ResponseEntity.ok(carService.buildCar("honda", "civic"));
     }
+
+    @GetMapping ("/find")
+    public ResponseEntity<Car> findCar() {
+        return ResponseEntity.ok(carService.findById(1L));
+    }
 }
